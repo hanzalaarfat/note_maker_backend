@@ -5,8 +5,12 @@
   "main": "server.js",
   "type": "module",
   "scripts": {
-    "start": "node server"
-   
+    "start": "node server.js",
+    "server": "nodemon server.js",
+    "client": "npm start --prefix Frontend",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "data:import": "node seeder",
+    "data:destroy": "node seeder -d"
   },
   "author": "Hanzala Arfat",
   "license": "ISC",
